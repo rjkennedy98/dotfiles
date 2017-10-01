@@ -1,13 +1,26 @@
-" Pathogen load
-filetype off
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-call pathogen#infect()
-call pathogen#helptags()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#rc()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'ervandew/supertab'
+Bundle 'ctrlp.vim'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'tComment'
+Bundle 'tpope/vim-vinegar'
 
-filetype plugin indent on
+if filereadable(glob(".vimrc.local"))
+    source .vimrc.local
+endif
+" All of your Plugins must be added before the following line
+
+filetype plugin indent on    " required
 syntax on
-
-set background=dark
 
 let mapleader = " "
 
@@ -128,5 +141,4 @@ let g:UltiSnipsEditSplit="vertical"
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 nnoremap <leader>q :vs#<CR>
-
 
