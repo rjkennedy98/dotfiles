@@ -13,6 +13,7 @@ Bundle 'ctrlp.vim'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'tComment'
 Bundle 'tpope/vim-vinegar'
+Bundle 'pangloss/vim-javascript'
 
 if filereadable(glob(".vimrc.local"))
     source .vimrc.local
@@ -144,4 +145,4 @@ let g:UltiSnipsEditSplit="vertical"
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 nnoremap <leader>q :vs#<CR>
-
+autocmd BufNewFile,BufRead *.json set ft=javascript
