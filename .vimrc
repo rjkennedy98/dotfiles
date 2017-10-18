@@ -28,7 +28,7 @@ let mapleader = " "
 " enable syntax highlighting
 syntax enable
 set background=dark
-colorscheme elflord
+colorscheme solarized
 
 " show line numbers
 set relativenumber 
@@ -146,3 +146,40 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 nnoremap <leader>q :vs#<CR>
 autocmd BufNewFile,BufRead *.json set ft=javascript
+
+
+
+" Text object for current line.
+
+scriptencoding utf-8
+
+" From the |omap-info| docs: The CTRL-U (<C-U>) is used to remove the range
+" that Vim may insert.
+onoremap al :<c-u>call <SID>CurrentLineAroundTextObject()<cr>
+onoremap il :<c-u>call <SID>CurrentLineInnerTextObject()<cr>
+vnoremap al :<c-u>call <SID>CurrentLineAroundTextObject()<cr>
+vnoremap il :<c-u>call <SID>CurrentLineInnerTextObject()<cr>
+
+function! s:CurrentLineAroundTextObject()
+    " Switch to characterwise visual mode.
+    normal! v
+    normal! $
+    " Jump to other end of visual range.
+    normal! o
+    normal! 0
+endfunction
+
+function! s:CurrentLineInnerTextObject()
+    " Switch to characterwise visual mode.
+    normal! v
+    normal! g_
+    " Jump to other end of visual range.
+    normal! o
+    normal! ^
+endfunction
+
+
+" setup vim: set filetype=vim tabstop=4 softtabstop=4 expandtab :
+" setup vim: set shiftwidth=4 shiftround textwidth=78 autoindent :
+" setup vim: set foldmethod=indent foldlevel=0 fileencoding=utf8 :
+
