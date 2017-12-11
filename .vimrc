@@ -28,7 +28,7 @@ let mapleader = " "
 " enable syntax highlighting
 syntax enable
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 
 " show line numbers
 set relativenumber 
@@ -124,16 +124,16 @@ nnoremap <leader>s :w<CR>
 
 nnoremap <leader>o :CtrlP<CR>
 
-" autocmd vimenter * NERDTree
-map <C-n> :NERDTreeToggle<CR>
-
-map <leader>p :%!python -m json.tool<CR>
+" toggle paste mode
+set pastetoggle=<F12>
 
 " associate *.foo with php filetype
 au BufRead,BufNewFile *.sjs setfiletype javascript
 
 map <leader>y :silent %!xmllint --encode UTF-8 --format -
+
 map <leader>f !%xmllint --format --recover -<CR>
+map <leader>j :%!python -m json.tool<CR>
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
