@@ -185,3 +185,6 @@ endfunction
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 autocmd Filetype xquery setlocal ts=2 sw=2 expandtab
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+
+" macos
+set clipboard=unnamed
