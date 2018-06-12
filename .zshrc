@@ -101,3 +101,6 @@ plugins=(
   rbenv
   ruby
 )
+
+
+alias lsl='ls -lthr'
