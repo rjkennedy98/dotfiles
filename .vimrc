@@ -14,6 +14,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'tComment'
 Bundle 'tpope/vim-vinegar'
 Bundle 'pangloss/vim-javascript'
+Bundle 'sukima/xmledit'
 
 if filereadable(glob(".vimrc.local"))
     source .vimrc.local
