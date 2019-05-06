@@ -134,7 +134,7 @@ au BufRead,BufNewFile *.sjs setfiletype javascript
 map <leader>y :silent %!xmllint --encode UTF-8 --format -
 
 map <leader>f !%xmllint --format --recover -<CR>
-map <leader>j :%!python -m json.tool<CR>
+map <leader>r :%!python -m json.tool<CR>
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -188,5 +188,4 @@ autocmd Filetype xquery setlocal ts=2 sw=2 expandtab
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 autocmd FileType xquery setlocal commentstring=(:\ %s\ :)
 
-" macos
 set clipboard=unnamed
